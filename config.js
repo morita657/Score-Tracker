@@ -2,10 +2,10 @@ module.exports = {
   // database connection configs
   db: {
     client: "pg",
-    // connection: {
-    //     host: "127.0.0.1",
-    //     // database: "clack",
-    // },
+    connection: {
+      host: "127.0.0.1",
+      database: "trainmap"
+    },
     connection: "postgres://localhost/",
     port: 5432
   },
