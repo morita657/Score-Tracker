@@ -1,0 +1,22 @@
+.table-definition {
+  width: 100%;
+  margin: auto;
+}
+
+table {
+  float: left;
+  margin-right: 10%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: left;
+}

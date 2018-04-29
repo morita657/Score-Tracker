@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Oedo line staions and trains</h1>
+    <p>This service provides the Oedo line stations' and trains' information.</p>
+    <h2>What this service can do</h2>
+    <ul>
+        <li>CRUD operations for Oedo line stations and trains from the data tables.</li>
+    </ul>
+    <h2>Tables</h2>
+    <div class="table-definition">
+        <table>
+            <caption>Trains table</caption>
+            <tr>
+                <th>Data name</th>
+                <th>Data type</th>
+            </tr>
+            <tr>
+                <th>Id:</th>
+                <td>Integer Primary key</td>
+            </tr>
+            <tr>
+                <th>Name:</th>
+                <td>String</td>
+            </tr>
+            <tr>
+                <th>length:</th>
+                <td>String</td>
+            </tr>
+            <tr>
+                <th>weight:</th>
+                <td>String</td>
+            </tr>
+            <tr>
+                <th>created_at:</th>
+                <td>timestamp</td>
+            </tr>
+        </table>
+        <table>
+            <caption>oedoline table</caption>
+            <tr>
+                <th>Data name</th>
+                <th>Data type</th>
+            </tr>
+            <tr>
+                <th>Id:</th>
+                <td>Integer Primary key</td>
+            </tr>
+            <tr>
+                <th>Name:</th>
+                <td>String</td>
+            </tr>
+            <tr>
+                <th>train_id:</th>
+                <td>Integer foreign key</td>
+            </tr>
+        </table>
+        <table></table>
+    </div>
+</body>
+
+</html>

@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
+    "open": "node index.js",
     "lint": "eslint --fix --ext .js .",
     "start": "node db/server.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
