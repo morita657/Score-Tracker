@@ -18,7 +18,6 @@ exports.up = function(knex, Promise) {
         .defaultTo(false);
       table
         .integer("user_id")
-        .foreign("users.id")
         .references("id")
         .inTable("users");
     });
