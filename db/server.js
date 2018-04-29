@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT || 8000;
 // Load knex from the file that you have already initialized.
 const knexfile = require("./knexfile.js");
-// const knex = require("./knexfile.js");
 const knex = require("knex")(knexfile);
 
 const app = express();
@@ -11,73 +10,66 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/todos", function(req, res) {
+app.get("/station", function(req, res) {
   knex
     .select()
-    .from("todos")
+    .from("oedoline")
     .then(function(todo) {
       res.send(todo);
     });
 });
 
-app.get("/todos/:id", function(req, res) {
+app.get("/station/:id", function(req, res) {
   knex
     .select()
-    .from("todos")
+    .from("oedoline")
     .where("id", req.params.id)
-    .then(function(todos) {
-      res.send(todos);
+    .then(function(station) {
+      res.send(station);
     });
 });
 
-app.post("/todos", function(req, res) {
-  knex("todos")
+app.post("/station", function(req, res) {
+  knex("oedoline")
     .insert({
-      title: req.body.title,
-      user_id: req.body.user_id
+      name: req.body.name,
+      train_id: req.body.train_id
     })
     .then(function() {
       knex
         .select()
-        .from("todos")
-        .then(function(todos) {
-          res.send(todos);
+        .from("oedoline")
+        .then(function(station) {
+          res.send(station);
         });
     });
-  // knex.raw('insert into todos(title, user_id) values(?, ?)', ['go play some sports', '1'])
-  //   .then(function () {
-  //     knex.select().from('todos')
-  //       .then(function (todo) {
-  //         res.send(todo);
-  //       })
-  //   })
 });
 // update
-app.put("/todos/:id", function(req, res) {
-  knex("todos")
+app.put("/station/:id", function(req, res) {
+  knex("oedoline")
     .where("id", req.params.id)
     .update({
-      title: req.body.title,
-      completed: req.body.completed
+      name: req.body.name,
+      train_id: req.body.train_id
     })
     .then(function() {
       knex
         .select()
-        .from("todos")
-        .then(function(todos) {
-          res.send(todos);
+        .from("oedoline")
+        .then(function(station) {
+          res.send(station);
         });
     });
 });
 // delete
-app.delete("/todos/:id", function(req, res) {
-  knex("todos")
+app.delete("/station/:id", function(req, res) {
+  knex("oedoline")
     .where("id", req.params.id)
     .del()
     .then(function() {
       knex
         .select()
-        .from("todos")
+        .from("oedoline")
         .then(function(todos) {
           res.send(todos);
         });
